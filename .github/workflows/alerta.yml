@@ -1,0 +1,15 @@
+name: Alerta CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  enviar-alerta:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Enviar notificación a ntfy.sh
+        run: |
+          curl -d "🚀 Código actualizado en el repositorio Hola Mundo (CI)" https://ntfy.sh/devops-itla
